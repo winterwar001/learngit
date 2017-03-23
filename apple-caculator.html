@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title>计算器制作</title>
+          <style>
+            *{
+              padding:0;
+              margin:0;
+            }
+
+            #whole{
+              font-size: 18px;
+              color:black;
+              font-family: 微软雅黑;
+              width:300px;
+              height:500px;
+              overflow: hidden;
+              background: pink;
+              margin: 15px auto;
+              text-align: center;
+            }
+            #down ul li{
+              list-style: none;
+              background: white;
+              width:73px;
+              height:70px;
+              float: left;
+              border: 1px solid black;
+              line-height:70px;
+            }
+            #top {
+              color:white;
+              background: black;
+              color:white;
+              height:140px;
+              width:300px;
+            }
+             #zero{
+              width:140px;
+              height:70px;
+            }
+            input{
+             height:50px;
+             width:280px;
+             background: black;
+             color:white;
+             text-align: right;
+             outline: medium;
+             font-size: 30px;
+             margin-top: 80px;
+             border:0;
+            }
+            .except{
+
+              background-color: green;
+            }
+
+
+
+
+          </style>
+    </head>
+    <body>
+        <div id="whole">
+          <div id="top">
+            <input type="text" value="0" />
+          </div>
+          <div id="down">
+            <ul>
+              <li>AC</li>
+              <li>+/-</li>
+              <li>%</li>
+              <li style="background:yellow;">➗</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li style="background:yellow;">✖️</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li style="background:yellow;">－</li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li style="background:yellow;">＋</li>
+              <li style="width:148px;height:70px;">0</li>
+              <li>.</li>
+              <li style="background:yellow;">=</li>
+            </ul>
+          </div>
+        </div>
+    </body>
+</html>
