@@ -77,7 +77,6 @@
               for(var i=0;i<=str.length;i++)
               {
                 var str2=str.substr(i,1);
-                alert(str2);
                 if(str2=='.')
                 {
                   str=str+'';
@@ -89,10 +88,35 @@
               {
                 str=str+'.';
               }
-
               document.getElementById('screen').value=str;
             }
 
+            function del(){
+              var str=document.getElementById('screen').value;
+              str='0';
+              document.getElementById('screen').value=str;
+            }
+
+            function change(){
+              var str=document.getElementById('screen').value;
+              str=-str;
+              document.getElementById('screen').value=str;
+            }
+
+            function set(){
+              var str=document.getElementById('screen').value;
+              str=str/100;
+              document.getElementById('screen').value=str;
+            }
+
+            function mat(){
+              var rel1=document.getElementById('screen').value;
+              document.getElementById('screen').value='';
+              var rel2=document.getElementById('screen').value;
+              document.getElementById('screen').value=rel2;
+              var chufa=rel1/rel2;
+              alert(chufa);
+            }
           </script>
     </head>
     <body>
@@ -102,10 +126,10 @@
           </div>
           <div id="down">
             <ul>
-              <li>AC</li>
-              <li>+/-</li>
-              <li>%</li>
-              <li class="except">➗</li>
+              <li onclick="del()">AC</li>
+              <li onclick="change()">+/-</li>
+              <li onclick="set()">%</li>
+              <li onclick="mat()" class="except">➗</li>
               <li onclick="command(7)">7</li>
               <li onclick="command(8)">8</li>
               <li onclick="command(9)">9</li>
