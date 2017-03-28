@@ -1,0 +1,128 @@
+<!doctype html>
+
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title>计算器制作</title>
+          <style>
+            *{
+              padding:0;
+              margin:0;
+            }
+
+            #whole{
+              font-size: 18px;
+              color:black;
+              font-family: 微软雅黑;
+              width:300px;
+              height:500px;
+              overflow: hidden;
+              background: pink;
+              margin: 15px auto;
+              text-align: center;
+            }
+            #down ul li{
+              list-style: none;
+              background: white;
+              width:73px;
+              height:70px;
+              float: left;
+              border: 1px solid black;
+              line-height:70px;
+            }
+            #top {
+              color:white;
+              background: black;
+              color:white;
+              height:140px;
+              width:300px;
+            }
+             #down ul #zero{
+               width:148px;
+               height:70px;
+             }
+            input{
+             height:50px;
+             width:280px;
+             background: black;
+             color:white;
+             text-align: right;
+             outline: medium;
+             font-size: 30px;
+             margin-top: 80px;
+             border:0;
+            }
+            #down ul .except{
+
+              background-color: green;
+            }
+          </style>
+          <script>
+            function command(num){
+              var input=document.getElementById('screen');
+              if(input.value!="0")
+              {
+                input.value=input.value+String(num);//不是0的时候，值应为字符串相加
+              }
+              else
+              {
+                input.value=String(num);//是0的时候，值就是字符串本身；
+              };
+
+            }
+
+            function dot(){
+              var str=document.getElementById('screen').value;
+              var isCheck=0;
+              for(var i=0;i<=str.length;i++)
+              {
+                var str2=str.substr(i,1);
+                alert(str2);
+                if(str2=='.')
+                {
+                  str=str+'';
+                  isCheck=1;
+                  break;
+                }
+              }
+              if(isCheck==0)
+              {
+                str=str+'.';
+              }
+
+              document.getElementById('screen').value=str;
+            }
+
+          </script>
+    </head>
+    <body>
+        <div id="whole">
+          <div id="top">
+            <input id="screen" type="text" value="0" />
+          </div>
+          <div id="down">
+            <ul>
+              <li>AC</li>
+              <li>+/-</li>
+              <li>%</li>
+              <li class="except">➗</li>
+              <li onclick="command(7)">7</li>
+              <li onclick="command(8)">8</li>
+              <li onclick="command(9)">9</li>
+              <li class="except">✖️</li>
+              <li onclick="command(4)">4</li>
+              <li onclick="command(5)">5</li>
+              <li onclick="command(6)">6</li>
+              <li class="except">－</li>
+              <li onclick="command(1)">1</li>
+              <li onclick="command(2)">2</li>
+              <li onclick="command(3)">3</li>
+              <li class="except">＋</li>
+              <li id="zero" onclick="command(0)">0</li>
+              <li onclick="dot()">.</li>
+              <li class="except">=</li>
+            </ul>
+          </div>
+        </div>
+    </body>
+</html>
